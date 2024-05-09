@@ -16,6 +16,16 @@ window.addEventListener('load', () => {
   const swiperContacts = document.querySelector('.where__swiper--js')
   if (swiperContacts){
 
+    const swiperContactsSlider = new Swiper(swiperContacts, {
+      spaceBetween: 25,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      pagination: {
+        el: ".where__swiper--js .swiper-pagination",
+      },
+    });
   }
   const reviewsSlider = document.querySelector('.reviews__slider--js')
   const resizableSwiper = (breakpoint, swiperClass, swiperSettings, callback) => {

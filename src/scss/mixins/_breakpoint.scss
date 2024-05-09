@@ -29,3 +29,16 @@
     @content;
   }
 }
+
+
+@mixin small-mobile {
+  @media (max-width: (450px)) {
+    @content;
+  }
+}
+
+@mixin for-360 {
+  @media (max-width: (450px)) {
+    @content;
+  }
+}
