@@ -1846,6 +1846,26 @@
     width: max-content;
     margin-right: 10px;
   }
+  &__synergy{
+    margin: 45px 0 60px;
+    display: flex;
+    align-items: center;
+    &-label{
+      font-weight: 300;
+      font-size: 32px;
+      color: #1c2120;
+      margin-right: 15px;
+    }
+  }
+  &__row{
+    display: flex;
+    flex-wrap: wrap;
+    margin: -18px -25px;
+  }
+  &__item-container{
+    padding: 18px 25px;
+    box-sizing: border-box;
+  }
   ul{
 
     margin: 0;

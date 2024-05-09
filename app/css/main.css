@@ -2937,6 +2937,34 @@ a {
   width: max-content;
   margin-right: 10px;
 }
+.application__synergy {
+  margin: 45px 0 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.application__synergy-label {
+  font-weight: 300;
+  font-size: 32px;
+  color: #1c2120;
+  margin-right: 15px;
+}
+.application__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: -18px -25px;
+}
+.application__item-container {
+  padding: 18px 25px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
 .application ul {
   margin: 0;
 }
