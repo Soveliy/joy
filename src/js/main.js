@@ -2,9 +2,9 @@ import './_components.js';
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
 import { burger } from './functions/burger.js';
-
+import MicroModal from 'micromodal';
 Swiper.use([Navigation, Pagination]);
-
+MicroModal.init();
 window.addEventListener('load', () => {
 
   const swiperBanner = new Swiper(".banner__swiper--js", {
