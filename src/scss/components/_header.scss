@@ -1,0 +1,271 @@
+// ваш код
+.header{
+  // display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 11px 25px 0 rgba(0, 0, 0, 0.1), 0 45px 45px 0 rgba(0, 0, 0, 0.09), 0 102px 61px 0 rgba(0, 0, 0, 0.05), 0 181px 72px 0 rgba(0, 0, 0, 0.01), 0 282px 79px 0 rgba(0, 0, 0, 0);
+  background: #fff;
+  z-index: 5000;
+  padding: 25px 0;
+  border-radius: 0 0 60px 60px;
+  @include tablet(){
+    border-radius: 0 0 20px 20px;
+    padding:5px 20px;
+  }
+  &__burger{
+    display: none;
+    @include tablet(){
+      display: block;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 5500;
+    }
+  }
+  &__row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__menu{
+    display: flex;
+    align-items: center;
+
+    @include tablet(){
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(100%);
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 500;
+      flex-direction: column;
+      background-color: #fff;
+      height: 100dvh;
+      width: 100%;
+      justify-content: center;
+      transition: .3s;
+      &.menu--active{
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+  &__buttons{
+    margin-left: 191px;
+
+    display: flex;
+    gap: 15px;
+    @include big-desktop(){
+      margin-left: 20px;
+    }
+    @include tablet(){
+      margin-left: 0;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 25px;
+      .button{
+        width: 194px;
+        justify-content: center;
+        text-align: center;
+        font-size: 18px;
+        min-height: 47px;
+        align-items: center;
+      }
+    }
+
+  }
+  &__cart{
+    position: relative;
+    display: flex;
+    align-items: center;
+    //width: 50vw;
+    justify-content: center;
+
+    height: 77px;
+    width: 77px;
+    box-sizing: border-box;
+
+    $border: 2px;
+    color: #FFF;
+    background-clip: padding-box; /* !importanté */
+    border: solid $border transparent; /* !importanté */
+    border-radius: 20px;
+    background-color: #5bd6d2;
+    @include tablet(){
+      width: 191px;
+      height: auto;
+      border-radius: 5px;
+      padding: 10px 15px;
+      box-sizing: border-box;
+      min-height: 47px;
+      align-items: center;
+      box-sizing: border-box;
+    }
+    &-counter{
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        width: 29px;
+        height: 29px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 500;
+        font-size: 14px;
+        color: #5bd6d2;
+        z-index: 50;
+        background-color: #fff;
+        @include tablet(){
+          display: none;
+        }
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      z-index: -1;
+      margin: -$border; /* !importanté */
+      border-radius: inherit; /* !importanté */
+      background: linear-gradient(to top, #fff, #9be6e4);
+    }
+    &-text{
+      display: none;
+      @include tablet(){
+        display: block;
+        font-weight: 500;
+        font-size: 18px;
+        text-transform: uppercase;
+        color: #fff;
+      }
+    }
+    svg{
+      @include tablet(){
+        display: none;
+      }
+    }
+  }
+  &__logo{
+    @include tablet(){
+      margin: 0 auto;
+      width: 67px;
+    }
+  }
+}
+.main-menu{
+  &__list{
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    @include tablet(){
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  &__item{
+    & + &{
+      margin-left: 65px;
+      @include big-desktop(){
+        margin-left: 20px;
+      }
+      @include tablet(){
+        margin-left: 0;
+        margin-top: 40px;
+      }
+    }
+  }
+  &__link{
+    font-weight: 500;
+    font-size: 22px;
+    color: #1c2120;
+    transition: .3s;
+    @include big-desktop(){
+      font-size: 18px;
+    }
+    @include tablet(){
+      font-size: 18px;
+    }
+    @include hover{
+      color: #ea79ed;
+    }
+  }
+}
+.button{
+  outline: none;
+  cursor: pointer;
+
+  &--gradient{
+
+
+      display: flex;
+      align-items: center;
+      //width: 50vw;
+
+      position: relative;
+      padding: 8px 25px;
+      box-sizing: border-box;
+
+      $border: 2px;
+      color: #FFF;
+      background-clip: padding-box; /* !importanté */
+      border: solid $border transparent; /* !importanté */
+      border-radius: 20px;
+      background-color: #EA79ED;
+      font-size: 22px;
+      line-height: 255%;
+
+      text-transform: uppercase;
+      color: #fff;
+      @include big-desktop(){
+        font-size: 18px;
+      }
+      @include tablet(){
+        border-radius: 5px;
+        font-size: 12px;
+        line-height: 130%;
+        padding: 10px 15px;
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0; right: 0; bottom: 0; left: 0;
+        z-index: -1;
+        margin: -$border; /* !importanté */
+        border-radius: inherit; /* !importanté */
+        background: linear-gradient(to top, #EA79ED, #f2aef4);
+      }
+  }
+  &--big{
+    font-size: 38px;
+    line-height: 148%;
+    @include big-desktop(){
+      font-size: 18px;
+    }
+    @include tablet(){
+      font-size: 12px;
+      line-height: 130%;
+    }
+  }
+  &--default{
+    border: 3px solid #ea79ed;
+    border-radius: 20px;
+    padding: 8px 25px;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 255%;
+    text-transform: uppercase;
+    color: #ea79ed;
+    @include tablet(){
+      border-radius: 5px;
+      font-size: 12px;
+      line-height: 130%;
+    }
+  }
+
+
+}
