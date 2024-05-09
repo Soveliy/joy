@@ -1766,6 +1766,7 @@
 }
 .micromodal-slide[aria-hidden=false] .modal__overlay{
   z-index: 6000;
+  backdrop-filter: blur(5px);
 }
 .checkbox{
   display: block;
@@ -1799,9 +1800,27 @@
   }
 }
 .application {
+  .modal__close{
+    position: absolute;
+    right: 50px;
+    top: 50px;
+    z-index: 5;
+  }
+  &__pretitle{
+    font-weight: 300;
+    font-size: 22px;
+    letter-spacing: -0.05em;
+    color: #1c2120;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 35px;
+  }
+  position: relative;
   max-width: 1720px;
   padding: 50px;
   width: 100%;
+
   &__title{
     font-weight: 900;
     font-size: 48px;
@@ -1865,6 +1884,40 @@
   &__item-container{
     padding: 18px 25px;
     box-sizing: border-box;
+    .application-input{
+      width: 100%;
+    }
+    &--w20{
+      width: 20%;
+    }
+    &--w25{
+      width: 25%;
+    }
+    &--w16{
+      width: 15%;
+    }
+    &--w50{
+      width: 50%;
+    }
+  }
+  &__item-label{
+    font-weight: 500;
+    font-size: 32px;
+    line-height: normal;
+    color: #1c2120;
+    margin-bottom: 5px;
+  }
+  &__patient + &__patient{
+    margin-top: 35px;
+  }
+  &__subtitle{
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 119%;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #1c2120;
+    margin-bottom: 15px;
   }
   ul{
 
@@ -1966,7 +2019,7 @@
   border-radius: 20px;
   width: 100%;
   box-sizing: border-box;
-
+      backdrop-filter: blur(5px);
 }
 
 .application-input{
