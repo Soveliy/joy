@@ -2693,9 +2693,11 @@ a {
     padding: 16px 0;
   }
 }
-.footer__logo {
-  margin: 32px auto 0;
-  width: 87px;
+@media (max-width: 1024px) {
+  .footer__logo {
+    margin: 32px auto 0;
+    width: 87px;
+  }
 }
 .footer__row {
   display: -webkit-box;

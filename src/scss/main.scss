@@ -1660,8 +1660,10 @@
     padding: 16px 0;
   }
   &__logo{
+   @include tablet(){
     margin: 32px auto 0;
     width: 87px;
+   }
   }
   &__row{
     display: flex;
