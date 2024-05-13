@@ -683,9 +683,24 @@
   border-radius: 60px;
   box-shadow: 0 11px 25px 0 rgba(0, 0, 0, 0.1), 0 45px 45px 0 rgba(0, 0, 0, 0.09), 0 102px 61px 0 rgba(0, 0, 0, 0.05), 0 181px 72px 0 rgba(0, 0, 0, 0.01), 0 282px 79px 0 rgba(0, 0, 0, 0);
   background: #fff;
+
   @include tablet(){
     border-radius: 20px;
 
+  }
+  .catalog-item__icon-in-cart{
+    display: none;
+  }
+  &.in-cart{
+    .catalog-item__icon-in-cart{
+      display: block;
+    }
+    .catalog-item__icon-cart{
+      display: none;
+    }
+    .catalog-item__button{
+      background-color: #5BD6D2;
+    }
   }
     &__price{
       position: absolute;
@@ -736,6 +751,9 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      picture{
+        height: 100%;
+      }
       @include big-desktop(){
         height: 250px;
       }
@@ -744,6 +762,7 @@
       }
       img{
         max-width: 100%;
+        max-height: 100%;
       }
     }
     &__list{
@@ -817,6 +836,7 @@
       }
     }
     &__button{
+      display: flex;
       width: 104px;
       background-color: #ea79ed;
       align-items: center;
@@ -824,22 +844,29 @@
       outline: none;
       border: none;
       cursor: pointer;
-      @include tablet(){
-        width: 40px;
+      flex-shrink: 0;
+      @include big-desktop(){
+        width: 80px;
       }
-
-    }
-    &__icon{
-      &-cart{
+      svg{
         width: 36px;
         height: 36px;
         fill: #1c2120;
+        @include big-desktop(){
+          height: 24px;
+          width: 24px;
+        }
         @include tablet(){
           height: 18px;
           width: 18px;
         }
       }
+      @include tablet(){
+        width: 40px;
+      }
+
     }
+
 }
 .reviews{
   padding: 50px 0;
@@ -1774,6 +1801,9 @@
   display: block;
   & + &{
     margin-top: 23px;
+    @include tablet(){
+      margin-top: 5px;
+    }
   }
   cursor: pointer;
   input{
@@ -1790,6 +1820,12 @@
     font-weight: 400;
     font-size: 32px;
     color: #1c2120;
+    @include big-desktop(){
+      font-size: 20px;
+    }
+    @include tablet(){
+      font-size: 12px;
+    }
   }
   &__icon{
     border: 2px solid #5bd6d2;
@@ -1799,14 +1835,30 @@
     transition: .3s;
     margin-right: 7.5px;
     box-sizing: border-box;
+    flex-shrink: 0;
+    @include tablet(){
+      height: 30px;
+      width: 30px;
+      margin-right: 15px;
+    }
   }
 }
 .application {
+  b{
+    font-weight: 500;
+  }
+  &__medical{
+    margin: 50px 0;
+  }
   .modal__close{
     position: absolute;
     right: 50px;
     top: 50px;
     z-index: 5;
+    @include tablet(){
+      top: 20px;
+      right: 20px;
+    }
   }
   &__pretitle{
     font-weight: 300;
@@ -1817,28 +1869,73 @@
     flex-direction: column;
     gap: 10px;
     margin-bottom: 35px;
+    @include big-desktop(){
+      font-size: 16px;
+
+    }
+    @include tablet(){
+      font-size: 12px;
+      letter-spacing: -0.05em;
+      margin-bottom: 25px;
+    }
   }
   position: relative;
   max-width: 1720px;
   padding: 50px;
   width: 100%;
-
+  @include tablet(){
+    padding: 20px;
+    max-width: 96%;
+  }
+  &__sing-button{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    outline: none;
+    background: #5bd6d2;
+    border-radius: 15px;
+    border: none;
+    padding: 0 30px;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #fff;
+    margin-right: 25px;
+    svg{
+      fill: #fff;
+      margin-right: 10px;
+      width: 13px;
+      height: 17px;
+    }
+  }
   &__title{
     font-weight: 900;
     font-size: 48px;
-    line-height: 104%;
+    line-height: 115%;
     letter-spacing: 0.06em;
     text-transform: uppercase;
 
     color: #1c2120;
     margin-bottom: 35px;
+    @include big-desktop(){
+      font-size: 40px;
+    }
+    @include tablet(){
+      font-size: 24px;
+      line-height: 208%;
+      letter-spacing: 0.06em;
+      margin-bottom: 10px;
+    }
     &--center{
       text-align: center;
     }
   }
   &__allert{
     &--w60{
-      max-width:873px;;
+      max-width:873px;
+      box-sizing: border-box;
+      @include tablet(){
+        margin-bottom: 10px;
+      }
     }
     padding: 10px 25px;
     font-weight: 400;
@@ -1848,8 +1945,13 @@
     background: #ea79ed;
     font-weight: 400;
     font-size: 22px;
+    line-height: normal;
     color: #fff;
     box-sizing: border-box;
+    @include tablet(){
+      font-size: 12px;
+      padding: 10px 15px;
+    }
     a{
       font-weight: 500;
       text-decoration: underline;
@@ -1857,11 +1959,19 @@
       color: #fff;
     }
   }
+  &__checkboxes-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px 150px;
+  }
   &__undetitle-row{
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     margin-bottom: 35px;
+    @include tablet(){
+      flex-direction: column-reverse;
+    }
   }
   &__undetitle-left{
     width: max-content;
@@ -1876,6 +1986,12 @@
       font-size: 32px;
       color: #1c2120;
       margin-right: 15px;
+      @include big-desktop(){
+        font-size: 20px;
+      }
+      @include tablet(){
+        font-size: 12px;
+      }
     }
   }
   &__row{
@@ -1891,15 +2007,25 @@
     }
     &--w20{
       width: 20%;
+      @include tablet(){
+        width: 50%;
+      }
     }
     &--w25{
       width: 25%;
+      @include tablet(){
+        width: 50%;
+      }
     }
     &--w16{
       width: 15%;
     }
     &--w50{
       width: 50%;
+
+    }
+    &--w100{
+      width: 100%;
     }
   }
   &__item-label{
@@ -1908,6 +2034,12 @@
     line-height: normal;
     color: #1c2120;
     margin-bottom: 5px;
+    @include big-desktop(){
+      font-size: 24px;
+    }
+    @include tablet(){
+      font-size: 12px;
+    }
   }
   &__patient + &__patient{
     margin-top: 35px;
@@ -1920,15 +2052,30 @@
     text-transform: uppercase;
     color: #1c2120;
     margin-bottom: 15px;
+    @include big-desktop(){
+      font-size: 35px;
+    }
+    @include tablet(){
+      font-size: 22px;
+    }
   }
   ul{
 
     margin: 0;
+    @include tablet(){
+      padding-left: 15px;
+    }
   }
   &__text{
     font-size: 32px;
     color: #1c2120;
     line-height: normal;
+    @include big-desktop(){
+      font-size: 20px;
+    }
+    @include tablet(){
+      font-size: 12px;
+    }
     > *:first-child{
       margin-top: 0;
     }
@@ -1958,6 +2105,9 @@
     background-color: transparent;
     outline: none;
     transition: .3s;
+    @include big-desktop(){
+      font-size: 24px;
+    }
     svg{
       margin-left: 10px;
     }
@@ -1975,9 +2125,21 @@
   font-size: 32px;
   color: #1c2120;
   line-height: normal;
+  @include big-desktop(){
+    font-size: 20px;
+  }
+  @include tablet(){
+    font-size: 12px;
+  }
   &__item{
     display: flex;
     // justify-content: space-between;
+    @include tablet(){
+      flex-direction: column;
+    }
+    &--between{
+      justify-content: space-between;
+    }
     & + &{
       margin-top: 10px;
     }
@@ -1990,6 +2152,9 @@
   &__right{
     width: 100%;
     display: flex;
+    &--w-auto{
+      width: auto;
+    }
     span{
       margin: 0 10px 0 35px;
     }
@@ -1998,6 +2163,9 @@
     min-width: 540px;
     flex-shrink: 0;
     margin-right: 25px;
+    @include big-desktop(){
+      min-width: 390px;
+    }
   }
   &__dots{
     height: 48px;
@@ -2027,11 +2195,18 @@
 .application-input{
   position: relative;
   display: inline-flex;
+  vertical-align: bottom;
   &--w27{
     width: 27%;
+    @include mobile(){
+      width: 55%;
+    }
   }
   &--w48{
     width: 48%;
+    @include mobile(){
+      width: 100%;
+    }
   }
   &--w100{
     width: 100%;
@@ -2048,10 +2223,16 @@
     justify-content: center;
     border-radius: 15px;
     background-color: #5bd6d2;
+    @include tablet(){
+      height: 100%;
+      width: 35px;
+      border-radius: 5px;
+    }
     svg{
       fill: #fff;
       height: 16px;
       width: 16px;
+
     }
   }
   &__elem{
@@ -2063,9 +2244,52 @@
     border-radius: 15px;
 
     padding: 0 20px;
+    @include big-desktop(){
+      font-size: 20px;
+    }
+    @include tablet(){
+      height: 35px;
+      border-radius: 5px;
+      font-size: 12px;
+
+    }
     outline: none;
     &--req{
       padding: 0 20px 0 60px;
+      @include tablet(){
+        padding: 0 10px 0 45px;
+      }
     }
   }
+}
+.nice-select{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  float: none;
+  height: 62px;
+  line-height: 62px;
+  background-color: #5BD6D2;
+  border-radius: 15px;
+  font-weight: 400;
+  font-size: 32px;
+  text-transform: uppercase;
+  color: #fff;
+
+  z-index: 50;
+  @include big-desktop(){
+    font-size: 20px;
+  }
+  &:after{
+    position: static;
+    margin-left: 10px;
+    height: 10px;
+    width: 10px;
+    border-color: #fff;
+  }
+}
+.nice-select-dropdown{
+  color: #1C2120;
+  width: 100%;
 }

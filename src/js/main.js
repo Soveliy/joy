@@ -2,11 +2,31 @@ import './_components.js';
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
 import { burger } from './functions/burger.js';
+import NiceSelect from "nice-select2";
 import MicroModal from 'micromodal';
+
 Swiper.use([Navigation, Pagination]);
 MicroModal.init();
 window.addEventListener('load', () => {
 
+
+  const cardUrpade = () => {
+    const cards = document.querySelectorAll('.catalog-item')
+    if (cards.length > 0) {
+      cards.forEach(card => {
+        const btn = card.querySelector('.catalog-item__button')
+        btn.addEventListener('click', () => {
+          btn.closest('.catalog-item').classList.toggle('in-cart')
+        })
+      })
+    }
+
+  }
+  cardUrpade();
+  const nameSelect = document.getElementById('name')
+  const nameGender = document.getElementById('gender')
+  new NiceSelect(document.getElementById("name"), {placeholder: 'Select title'});
+  new NiceSelect(document.getElementById("genger"), {placeholder: 'Select gender'});
   const swiperBanner = new Swiper(".banner__swiper--js", {
     pagination: {
       el: ".banner__swiper--js .swiper-pagination",

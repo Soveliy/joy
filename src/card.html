@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html')
+
+<body class="page__body">
+  <div class="site-container">
+    @include('partials/header.html')
+    <main class="main">
+
+      <section class="catalog">
+        <div class="container">
+          <div class="section-head section-head--big-margin">
+           <div class="section-head__left">
+            <div class="section-head__pretitle">
+              check your
+            </div>
+            <h2 class="section-head__title">
+              CART
+            </h2>
+           </div>
+
+          </div>
+          <div class="catalog__grid">
+            <div class="catalog-item in-cart">
+              <div class="catalog-item__price">
+                <div class="catalog-item__price-value">$15</div>
+                <div class="catalog-item__price-label">per gramm</div>
+              </div>
+              <div class="catalog-item__body">
+                <div class="catalog-item__image">
+                  <picture>
+                    <source srcset="img/catalog-item.webp" type="image/webp">
+                    <img loading="lazy" src="img/catalog-item.png" class="image" alt="">
+                  </picture>
+                </div>
+                <ul class="catalog-item__list">
+                  <li class="catalog-item__option">hybrid</li>
+                  <li class="catalog-item__option">THC <b>24%</b></li>
+                  <li class="catalog-item__option">CBG <b>1%</b></li>
+                </ul>
+              </div>
+              <div class="catalog-item__footer">
+                <div class="catalog-item__name">Tropicana Poison</div>
+                <button class="catalog-item__button">
+                  <svg class="catalog-item__icon-cart">
+                    <use xlink:href="img/sprite.svg#cart"></use>
+                  </svg>
+                  <svg class="catalog-item__icon-in-cart">
+                    <use xlink:href="img/sprite.svg#gal"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="catalog-item in-cart">
+              <div class="catalog-item__price">
+                <div class="catalog-item__price-value">$15</div>
+                <div class="catalog-item__price-label">per gramm</div>
+              </div>
+              <div class="catalog-item__body">
+                <div class="catalog-item__image">
+                  <picture>
+                    <source srcset="img/catalog-item.webp" type="image/webp">
+                    <img loading="lazy" src="img/catalog-item.png" class="image" alt="">
+                  </picture>
+                </div>
+                <ul class="catalog-item__list">
+                  <li class="catalog-item__option">hybrid</li>
+                  <li class="catalog-item__option">THC <b>24%</b></li>
+                  <li class="catalog-item__option">CBG <b>1%</b></li>
+                </ul>
+              </div>
+              <div class="catalog-item__footer">
+                <div class="catalog-item__name">Tropicana Poison</div>
+                <button class="catalog-item__button">
+                  <svg class="catalog-item__icon-cart">
+                    <use xlink:href="img/sprite.svg#cart"></use>
+                  </svg>
+                  <svg class="catalog-item__icon-in-cart">
+                    <use xlink:href="img/sprite.svg#gal"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="catalog-item in-cart">
+              <div class="catalog-item__price">
+                <div class="catalog-item__price-value">$15</div>
+                <div class="catalog-item__price-label">per gramm</div>
+              </div>
+              <div class="catalog-item__body">
+                <div class="catalog-item__image">
+                  <picture>
+                    <source srcset="img/catalog-item.webp" type="image/webp">
+                    <img loading="lazy" src="img/catalog-item.png" class="image" alt="">
+                  </picture>
+                </div>
+                <ul class="catalog-item__list">
+                  <li class="catalog-item__option">hybrid</li>
+                  <li class="catalog-item__option">THC <b>24%</b></li>
+                  <li class="catalog-item__option">CBG <b>1%</b></li>
+                </ul>
+              </div>
+              <div class="catalog-item__footer">
+                <div class="catalog-item__name">Tropicana Poison</div>
+                <button class="catalog-item__button">
+                  <svg class="catalog-item__icon-cart">
+                    <use xlink:href="img/sprite.svg#cart"></use>
+                  </svg>
+                  <svg class="catalog-item__icon-in-cart">
+                    <use xlink:href="img/sprite.svg#gal"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="section-footer catalog__section-footer">
+
+          </div>
+        </div>
+      </section>
+
+
+    </main>
+    @include('partials/footer.html')
+    <!-- @include('html/h1.html') пример include -->
+  </div>
+</body>
+
+</html>

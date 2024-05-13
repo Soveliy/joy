@@ -39,7 +39,7 @@
             sign up | log in
           </button>
           <button data-micromodal-trigger="callback" class="button button--default">Prescription</button>
-          <a href="#" class="header__cart">
+          <a href="card.html" class="header__cart">
             <svg class="header__cart-icon" width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M19.8718 4.23201H8.6289L6.81392 0.370361H0.500122V4.23201H4.36177L11.3127 18.887L8.68682 23.6175C8.3972 24.1581 8.22342 24.7953 8.22342 25.4711C8.22342 26.4953 8.63027 27.4775 9.35447 28.2017C10.0787 28.9259 11.0609 29.3327 12.0851 29.3327H19.8718V25.4711H12.896C12.768 25.4711 12.6452 25.4202 12.5547 25.3297C12.4642 25.2392 12.4133 25.1164 12.4133 24.9884C12.4133 24.8918 12.4326 24.8146 12.4712 24.7567L14.209 21.6094H19.8718V4.23201Z" fill="white"/>
               <path d="M8.22342 35.1252C8.22342 32.982 9.94186 31.2636 12.0851 31.2636C13.1092 31.2636 14.0915 31.6704 14.8157 32.3946C15.5399 33.1188 15.9467 34.101 15.9467 35.1252C15.9467 36.1494 15.5399 37.1316 14.8157 37.8558C14.0915 38.58 13.1092 38.9869 12.0851 38.9869C11.0609 38.9869 10.0787 38.58 9.35447 37.8558C8.63027 37.1316 8.22342 36.1494 8.22342 35.1252Z" fill="white"/>
@@ -276,32 +276,8 @@
                   <svg class="catalog-item__icon-cart">
                     <use xlink:href="img/sprite.svg#cart"></use>
                   </svg>
-                </button>
-              </div>
-            </div>
-            <div class="catalog-item">
-              <div class="catalog-item__price">
-                <div class="catalog-item__price-value">$15</div>
-                <div class="catalog-item__price-label">per gramm</div>
-              </div>
-              <div class="catalog-item__body">
-                <div class="catalog-item__image">
-                  <picture>
-                    <source srcset="img/catalog-item.webp" type="image/webp">
-                    <img loading="lazy" src="img/catalog-item.png" class="image" alt="">
-                  </picture>
-                </div>
-                <ul class="catalog-item__list">
-                  <li class="catalog-item__option">hybrid</li>
-                  <li class="catalog-item__option">THC <b>24%</b></li>
-                  <li class="catalog-item__option">CBG <b>1%</b></li>
-                </ul>
-              </div>
-              <div class="catalog-item__footer">
-                <div class="catalog-item__name">Tropicana Poison</div>
-                <button class="catalog-item__button">
-                  <svg class="catalog-item__icon-cart">
-                    <use xlink:href="img/sprite.svg#cart"></use>
+                  <svg class="catalog-item__icon-in-cart">
+                    <use xlink:href="img/sprite.svg#gal"></use>
                   </svg>
                 </button>
               </div>
@@ -329,6 +305,39 @@
                 <button class="catalog-item__button">
                   <svg class="catalog-item__icon-cart">
                     <use xlink:href="img/sprite.svg#cart"></use>
+                  </svg>
+                  <svg class="catalog-item__icon-in-cart">
+                    <use xlink:href="img/sprite.svg#gal"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="catalog-item">
+              <div class="catalog-item__price">
+                <div class="catalog-item__price-value">$15</div>
+                <div class="catalog-item__price-label">per gramm</div>
+              </div>
+              <div class="catalog-item__body">
+                <div class="catalog-item__image">
+                  <picture>
+                    <source srcset="img/catalog-item.webp" type="image/webp">
+                    <img loading="lazy" src="img/catalog-item.png" class="image" alt="">
+                  </picture>
+                </div>
+                <ul class="catalog-item__list">
+                  <li class="catalog-item__option">hybrid</li>
+                  <li class="catalog-item__option">THC <b>24%</b></li>
+                  <li class="catalog-item__option">CBG <b>1%</b></li>
+                </ul>
+              </div>
+              <div class="catalog-item__footer">
+                <div class="catalog-item__name">Tropicana Poison</div>
+                <button class="catalog-item__button">
+                  <svg class="catalog-item__icon-cart">
+                    <use xlink:href="img/sprite.svg#cart"></use>
+                  </svg>
+                  <svg class="catalog-item__icon-in-cart">
+                    <use xlink:href="img/sprite.svg#gal"></use>
                   </svg>
                 </button>
               </div>
@@ -1333,14 +1342,15 @@
                 <label class="application-bottom__label">
                   Signature of Patient / Guardian:
                 </label>
-                <div class="application-input application-input">
-                  <div class="application-input__req">
-                    <svg class="">
-                      <use xlink:href="img/sprite.svg#req"></use>
-                    </svg>
-                  </div>
-                  <input type="text" name="fullName" class="application-input__elem application-input__elem--req" placeholder="">
-                </div>
+               <div class="application-bottom__right">
+                <button class="application__sing-button">
+                  <svg class="">
+                    <use xlink:href="img/sprite.svg#sign"></use>
+                  </svg>
+                  Sign here
+                </button>
+                  <b> Date:</b> Apr 14, 2024
+               </div>
               </div>
             </div>
             <div class="application-bottom__items">
@@ -1438,8 +1448,13 @@
               <div class="application__item-container application__item-container--w25">
                   <div class="application__item">
                     <label class="application__item-label">Title</label>
-                    <select name="" id="">
-                      <option value=""></option>
+                    <select name="" id="name">
+                      <option value="Select title">Title here</option>
+                      <option value="Select title">Title here</option>
+                      <option value="Select title">Title here</option>
+                      <option value="Select title">Title here</option>
+                      <option value="Select title">Title here</option>
+                      <option value="Select title">Title here</option>
                     </select>
                   </div>
               </div>
@@ -1534,7 +1549,10 @@
               <div class="application__item-container application__item-container--w25">
                 <div class="application__item">
                   <label class="application__item-label">Genger</label>
-                  <select name="" id=""></select>
+                  <select name="" id="genger">
+                    <option value="">test</option>
+                    <option value="">test</option>
+                  </select>
                 </div>
               </div>
               <div class="application__item-container application__item-container--w25">
@@ -1706,9 +1724,79 @@
             <div class="application__title application__title--center">
               Medical provider information
             </div>
-            <p>
+            <p class="application__desc">
               Provide information about the medical provider who completed your Written Certification (if applicable)
             </p>
+            <div class="application__subtitle">
+              Name
+            </div>
+            <div class="application__row">
+              <div class="application__item-container application__item-container--w100">
+                <div class="application__item">
+                  <label class="application__item-label">Medical Aid Provider</label>
+                  <div class="application-input">
+                    <input type="text" name="Medical Aid Provider" class="application-input__elem" placeholder="Name">
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="application__patient">
+            <div class="application__subtitle">
+              Business address
+            </div>
+            <div class="application__row">
+              <div class="application__item-container application__item-container--w100">
+                <div class="application__item">
+                  <label class="application__item-label">Street / Suite number</label>
+                  <div class="application-input">
+                    <div class="application-input__req">
+                      <svg class="">
+                        <use xlink:href="img/sprite.svg#req"></use>
+                      </svg>
+                    </div>
+                    <input type="text" required name="Street / Suite number"  class="application-input__elem application-input__elem--req" placeholder="Street / Suite number">
+                  </div>
+                </div>
+              </div>
+              <div class="application__item-container application__item-container--w25">
+                <div class="application__item">
+                  <label class="application__item-label">Phone Number</label>
+                  <div class="application-input">
+
+                    <input type="text" name="Phone Number"  class="application-input__elem" placeholder="Phone Number">
+                  </div>
+                </div>
+              </div>
+              <div class="application__item-container application__item-container--w25">
+                <div class="application__item">
+                  <label class="application__item-label">City</label>
+                  <div class="application-input">
+
+                    <input type="text" name="City"  class="application-input__elem" placeholder="City">
+                  </div>
+                </div>
+              </div>
+              <div class="application__item-container application__item-container--w25">
+                <div class="application__item">
+                  <label class="application__item-label">Provinance</label>
+                  <div class="application-input">
+
+                    <input type="text" name="Provinance"  class="application-input__elem" placeholder="Provinance">
+                  </div>
+                </div>
+              </div>
+              <div class="application__item-container application__item-container--w25">
+                <div class="application__item">
+                  <label class="application__item-label">Postal code</label>
+                  <div class="application-input">
+
+                    <input type="text" name="Postal code"  class="application-input__elem" placeholder="7100–7299">
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="application__page-bottom">
             <button class="application__button application__button--bordered">Cancel</button>
@@ -1719,6 +1807,80 @@
                 </svg>
 
             </button>
+          </div>
+          <div class="application__medical">
+            <div class="application__title application__title--center">
+              Medical information release
+            </div>
+            <div class="application__allert">
+              I, hereby, authorize the release of relevant medical information by the provider listed above to SAHPRA if additional information about my qualifying medical condition or Written Certification is required.
+            </div>
+            <div class="application-bottom">
+              <div class="application-bottom__item application-bottom__item--between">
+                <label class="application-bottom__label">
+                  Applicant’s Signature:
+                </label>
+               <div class="application-bottom__right application-bottom__right--w-auto">
+                <button class="application__sing-button">
+                  <svg class="">
+                    <use xlink:href="img/sprite.svg#sign"></use>
+                  </svg>
+                  Sign here
+                </button>
+                  <b> Date:</b> Apr 14, 2024
+               </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="application__checkboxes">
+            <div class="application__title application__title--center">
+              ALTERNATIVE TREATMENT CENTER (Referring Agent)
+            </div>
+            <div class="application__checkboxes-grid">
+              <label class="checkbox">
+                <input type="checkbox" name="...nitial Application">
+                <span class="checkbox__wrap">
+                  <span class="checkbox__icon"></span>
+                  …nitial Application
+                </span>
+              </label>
+              <label class="checkbox">
+                <input type="checkbox" name="...nitial Application">
+                <span class="checkbox__wrap">
+                  <span class="checkbox__icon"></span>
+                  …nitial Application
+                </span>
+              </label>
+              <label class="checkbox">
+                <input type="checkbox" name="...nitial Application">
+                <span class="checkbox__wrap">
+                  <span class="checkbox__icon"></span>
+                  …nitial Application
+                </span>
+              </label>
+              <label class="checkbox">
+                <input type="checkbox" name="...nitial Application">
+                <span class="checkbox__wrap">
+                  <span class="checkbox__icon"></span>
+                  …nitial Application
+                </span>
+              </label>
+              <label class="checkbox">
+                <input type="checkbox" name="...nitial Application">
+                <span class="checkbox__wrap">
+                  <span class="checkbox__icon"></span>
+                  …nitial Application
+                </span>
+              </label>
+              <label class="checkbox">
+                <input type="checkbox" name="...nitial Application">
+                <span class="checkbox__wrap">
+                  <span class="checkbox__icon"></span>
+                  …nitial Application
+                </span>
+              </label>
+            </div>
           </div>
 
         </div>

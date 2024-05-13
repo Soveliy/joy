@@ -221,6 +221,10 @@
 
       text-transform: uppercase;
       color: #fff;
+      transition: .3s;
+      @include hover(){
+        opacity: .8;
+      }
       @include big-desktop(){
         font-size: 18px;
       }
