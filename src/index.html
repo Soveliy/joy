@@ -133,7 +133,7 @@
           </div>
         </div>
       </section>
-      <section class="about">
+      <section class="about" id="about">
         <div class="container">
           <div class="about__content">
             <div class="about__row">
@@ -171,7 +171,7 @@
           </div>
         </div>
       </section>
-      <section class="catalog">
+      <section class="catalog" id="catalog">
         <div class="container">
           <div class="section-head section-head--big-margin">
            <div class="section-head__left">
@@ -569,7 +569,7 @@
           </div>
         </div>
       </section>
-      <section class="where">
+      <section class="where" id="location">
         <div class="container">
           <div class="where__content">
             <div class="swiper where__swiper where__swiper--js">
@@ -625,52 +625,37 @@
                     <script
                     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOVYRIgupAurZup5y1PRh8Ismb1A3lLao&libraries=places&callback=initMap">
                     </script>
-                    <script>
-                          function initMap() {
+                      <script>
+                        function initMap() {
 
-                          var location = {lat: -23.8764, lng: 29.4542};
-
-
-                          var mapOptions = {
-                              center: location,
-                              zoom: 16
-                          };
+                        var location = {lat: -23.8764, lng: 29.4542};
 
 
-                          var map = new google.maps.Map(document.getElementById('map'), mapOptions);
-
-                            // Создаем кастомную метку
-                            var marker = new google.maps.Marker({
-                                position: location,
-                                map: map,
-                                title: 'Место',
-                                // Добавляем кастомную иконку
-                                icon: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png'
-                            });
-
-                            // Создаем текстовую метку
-                            var infowindow = new google.maps.InfoWindow({
-                                content: '<div class="infowindow">We are here</div>',
-                                pixelOffset: new google.maps.Size(0, -10) // сдвигаем текст на 10 пикселей вверх
-                            });
+                        var mapOptions = {
+                            center: location,
+                            zoom: 16
+                        };
 
 
-                          infowindow.open(map, marker);
+                        var map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
 
-                              var labelMarker = new google.maps.Marker({
-                                  position: {lat: -23.8763, lng: 29.4542}, // Позиция рядом с первой меткой
-                                  map: map,
-                                  label: {
-                                      text: 'We are here',
-                                      color: 'blue',
-                                      fontSize: '14px',
-                                      fontWeight: 'bold'
-                                  }
-                              });
-                          }
-                        initMap()
-                    </script>
+                          var marker = new google.maps.Marker({
+                              position: location,
+                              map: map,
+
+
+                              icon: 'img/map-marker.svg'
+                          });
+
+
+
+
+
+
+                        }
+                      initMap()
+                  </script>
                   </div>
                 </div>
                 <div class="swiper-slide">
@@ -736,35 +721,20 @@
 
                           var map = new google.maps.Map(document.getElementById('map2'), mapOptions);
 
-                            // Создаем кастомную метку
+
                             var marker = new google.maps.Marker({
                                 position: location,
                                 map: map,
-                                title: 'Место',
-                                // Добавляем кастомную иконку
-                                icon: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png'
-                            });
 
-                            // Создаем текстовую метку
-                            var infowindow = new google.maps.InfoWindow({
-                                content: '<div class="infowindow">We are here</div>',
-                                pixelOffset: new google.maps.Size(0, -10) // сдвигаем текст на 10 пикселей вверх
+
+                                icon: 'img/map-marker.svg'
                             });
 
 
-                          infowindow.open(map, marker);
 
 
-                              var labelMarker = new google.maps.Marker({
-                                  position: {lat: -23.8763, lng: 29.4542}, // Позиция рядом с первой меткой
-                                  map: map,
-                                  label: {
-                                      text: 'We are here',
-                                      color: 'blue',
-                                      fontSize: '14px',
-                                      fontWeight: 'bold'
-                                  }
-                              });
+
+
                           }
                         initMap()
                     </script>
@@ -820,51 +790,36 @@
                     </div>
 
                     <script>
-                          function initMap() {
+                      function initMap() {
 
-                          var location = {lat: -23.8764, lng: 29.4542};
-
-
-                          var mapOptions = {
-                              center: location,
-                              zoom: 16
-                          };
+                      var location = {lat: -23.8764, lng: 29.4542};
 
 
-                          var map = new google.maps.Map(document.getElementById('map3'), mapOptions);
-
-                            // Создаем кастомную метку
-                            var marker = new google.maps.Marker({
-                                position: location,
-                                map: map,
-                                title: 'Место',
-                                // Добавляем кастомную иконку
-                                icon: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png'
-                            });
-
-                            // Создаем текстовую метку
-                            var infowindow = new google.maps.InfoWindow({
-                                content: '<div class="infowindow">We are here</div>',
-                                pixelOffset: new google.maps.Size(0, -10) // сдвигаем текст на 10 пикселей вверх
-                            });
+                      var mapOptions = {
+                          center: location,
+                          zoom: 16
+                      };
 
 
-                          infowindow.open(map, marker);
+                      var map = new google.maps.Map(document.getElementById('map3'), mapOptions);
 
 
-                              var labelMarker = new google.maps.Marker({
-                                  position: {lat: -23.8763, lng: 29.4542}, // Позиция рядом с первой меткой
-                                  map: map,
-                                  label: {
-                                      text: 'We are here',
-                                      color: 'blue',
-                                      fontSize: '14px',
-                                      fontWeight: 'bold'
-                                  }
-                              });
-                          }
-                        initMap()
-                    </script>
+                        var marker = new google.maps.Marker({
+                            position: location,
+                            map: map,
+
+
+                            icon: 'img/map-marker.svg'
+                        });
+
+
+
+
+
+
+                      }
+                    initMap()
+                </script>
                   </div>
                 </div>
               </div>

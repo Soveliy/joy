@@ -23,10 +23,39 @@ window.addEventListener('load', () => {
 
   }
   cardUrpade();
+    const formPages = document.querySelectorAll('[data-page]')
+    const stepButton = document.querySelector("[data-step-to-button='2']");
+    const page1Fields = document.querySelectorAll("[data-page='1'] .application-input__elem--req");
+    const page1 = document.querySelector("[data-page='1']");
+    const page2 = document.querySelector("[data-page='2']");
+    console.log(page1Fields)
+    stepButton.addEventListener("click", function() {
+        let allFieldsFilled = true;
+        // Проверяем, все ли обязательные поля на странице 1 заполнены
+        page1Fields.forEach(function(field) {
+            if (field.value.trim() === '') {
+                allFieldsFilled = false;
+            }
+        });
+
+        if (allFieldsFilled) {
+            page1.classList.remove("js-active");
+            page2.classList.add("js-active");
+        }
+    });
   const nameSelect = document.getElementById('name')
   const nameGender = document.getElementById('gender')
   new NiceSelect(document.getElementById("name"), {placeholder: 'Select title'});
   new NiceSelect(document.getElementById("genger"), {placeholder: 'Select gender'});
+
+  const loginBtns = document.querySelectorAll('.form__side,.form__switch')
+  if (loginBtns.length > 0){
+    loginBtns.forEach(loginBtn =>{
+      loginBtn.addEventListener('click', () => {
+        loginBtn.closest('.forms').classList.toggle('js-active')
+      })
+    })
+  }
   const swiperBanner = new Swiper(".banner__swiper--js", {
     pagination: {
       el: ".banner__swiper--js .swiper-pagination",

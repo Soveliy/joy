@@ -1844,11 +1844,20 @@
   }
 }
 .application {
+  &__page{
+    display: none;
+    &.js-active{
+      display: block;
+    }
+  }
   b{
     font-weight: 500;
   }
   &__medical{
     margin: 50px 0;
+    @include tablet(){
+      margin: 25px 0;
+    }
   }
   .modal__close{
     position: absolute;
@@ -1906,6 +1915,15 @@
       width: 13px;
       height: 17px;
     }
+    @include tablet(){
+      font-size: 12px;
+      border-radius: 5px;
+      margin-right: 0;
+      padding: 5px;
+      box-sizing: border-box;
+      height: 35px;
+      justify-content: center;
+    }
   }
   &__title{
     font-weight: 900;
@@ -1927,6 +1945,9 @@
     }
     &--center{
       text-align: center;
+      @include tablet(){
+        text-align: left;
+      }
     }
   }
   &__allert{
@@ -1963,6 +1984,9 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 10px 150px;
+    @include tablet(){
+      display: block;
+    }
   }
   &__undetitle-row{
     display: flex;
@@ -1971,6 +1995,7 @@
     margin-bottom: 35px;
     @include tablet(){
       flex-direction: column-reverse;
+      margin-bottom: 25px;
     }
   }
   &__undetitle-left{
@@ -1981,6 +2006,12 @@
     margin: 45px 0 60px;
     display: flex;
     align-items: center;
+    @include tablet(){
+      margin: 25px 0;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 5px;
+    }
     &-label{
       font-weight: 300;
       font-size: 32px;
@@ -1991,6 +2022,7 @@
       }
       @include tablet(){
         font-size: 12px;
+        margin-bottom: 5px;
       }
     }
   }
@@ -1998,10 +2030,16 @@
     display: flex;
     flex-wrap: wrap;
     margin: -18px -25px;
+    @include tablet(){
+      margin: -5px -7.5px;
+    }
   }
   &__item-container{
     padding: 18px 25px;
     box-sizing: border-box;
+    @include tablet(){
+      padding: 5px 7.5px;
+    }
     .application-input{
       width: 100%;
     }
@@ -2019,6 +2057,9 @@
     }
     &--w16{
       width: 15%;
+      @include tablet(){
+        width: 50%;
+      }
     }
     &--w50{
       width: 50%;
@@ -2027,6 +2068,17 @@
     &--w100{
       width: 100%;
     }
+    &--mob-100{
+      @include tablet(){
+        width: 100%;
+      }
+    }
+    &--mob-last{
+     @include tablet(){
+      width: 100%;
+      order: 1;
+     }
+    }
   }
   &__item-label{
     font-weight: 500;
@@ -2034,6 +2086,7 @@
     line-height: normal;
     color: #1c2120;
     margin-bottom: 5px;
+    display: block;
     @include big-desktop(){
       font-size: 24px;
     }
@@ -2043,6 +2096,9 @@
   }
   &__patient + &__patient{
     margin-top: 35px;
+    @include tablet(){
+      margin-top: 25px;
+    }
   }
   &__subtitle{
     font-weight: 700;
@@ -2091,6 +2147,11 @@
     justify-content: flex-end;
     gap: 35px;
     margin-top: 50px;
+    @include tablet(){
+      gap: 7px;
+      justify-content: flex-start;
+      margin-top: 25px;
+    }
   }
   &__button{
     display: flex;
@@ -2105,8 +2166,18 @@
     background-color: transparent;
     outline: none;
     transition: .3s;
+    cursor: pointer;
     @include big-desktop(){
       font-size: 24px;
+    }
+    @include tablet(){
+      font-size: 12px;
+      line-height: 130%;
+      border-radius: 5px;
+      padding: 10px;
+    }
+    @include hover(){
+      opacity: .8;
     }
     svg{
       margin-left: 10px;
@@ -2117,6 +2188,13 @@
     &--pink{
       background-color: #ea79ed;
       color: #fff;
+    }
+  }
+  &__checkboxes-cointainer{
+    .application-input{
+      margin-top: 5px;
+      width: 100%;
+
     }
   }
 }
@@ -2130,6 +2208,7 @@
   }
   @include tablet(){
     font-size: 12px;
+    margin-top: 25px;
   }
   &__item{
     display: flex;
@@ -2137,21 +2216,79 @@
     @include tablet(){
       flex-direction: column;
     }
+    &--row-beetwen{
+      @include tablet(){
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+    &--w40{
+      @include tablet(){
+        width:40%;
+        min-width: 120px;
+      }
+    }
+    &--w60{
+      @include tablet(){
+        width:60%;
+      }
+    }
     &--between{
       justify-content: space-between;
     }
     & + &{
       margin-top: 10px;
+      @include tablet(){
+        margin-top: 5px;
+      }
+    }
+    &.application-bottom__item--w40,.application-bottom__item--w60{
+      @include tablet(){
+        margin-top: 0;
+      }
     }
   }
   &__items{
+
+    &--hide-mob{
+      @include tablet(){
+      display: none;
+    }
+    }
+    &--flex{
+      @include tablet(){
+        display: flex;
+        gap: 10px;
+        .application-input{
+          margin-top: auto;
+        }
+      }
+    }
+    &--mob{
+      display: none;
+      @include tablet(){
+        display: block;
+        .application-bottom__item{
+          flex-direction: row;
+        }
+      }
+    }
     & + &{
       margin-top: 35px;
+      @include tablet(){
+        margin-top: 25px;
+      }
     }
   }
   &__right{
     width: 100%;
     display: flex;
+    &--column-reverse{
+      @include tablet(){
+        display: flex;
+        flex-direction: column-reverse;
+      }
+    }
     &--w-auto{
       width: auto;
     }
@@ -2159,18 +2296,33 @@
       margin: 0 10px 0 35px;
     }
   }
+  &__date{
+    @include tablet(){
+      margin-bottom: 5px;
+      margin-left: auto;
+    }
+  }
   &__label{
     min-width: 540px;
     flex-shrink: 0;
     margin-right: 25px;
+    font-weight: 500;
     @include big-desktop(){
       min-width: 390px;
+    }
+    @include tablet(){
+      min-width: inherit;
+      margin-right: 0;
     }
   }
   &__dots{
     height: 48px;
     box-sizing: border-box;
     border-bottom: 2px dashed #1c2120;
+    @include tablet(){
+      height: 18px;
+      margin-left: 10px;
+    }
     &--w40{
       width: 40%;
     }
@@ -2181,6 +2333,19 @@
       width: 100%;
     }
 
+  }
+  &--mob-row{
+    @include tablet(){
+
+      flex-direction: row;
+      .application-bottom__right{
+        display: flex;
+        flex-direction: column;
+      }
+      .application__sing-button{
+        min-width:140px;
+      }
+    }
   }
 }
 .application__form{
@@ -2196,6 +2361,9 @@
   position: relative;
   display: inline-flex;
   vertical-align: bottom;
+  &--w100{
+    width: 100%;
+  }
   &--w27{
     width: 27%;
     @include mobile(){
@@ -2251,6 +2419,7 @@
       height: 35px;
       border-radius: 5px;
       font-size: 12px;
+      padding: 0 10px;
 
     }
     outline: none;
@@ -2281,6 +2450,12 @@
   @include big-desktop(){
     font-size: 20px;
   }
+  @include tablet(){
+    height: 35px;
+    line-height: 35px;
+    font-size: 12px;
+    border-radius: 5px;
+  }
   &:after{
     position: static;
     margin-left: 10px;
@@ -2292,4 +2467,128 @@
 .nice-select-dropdown{
   color: #1C2120;
   width: 100%;
+}
+select{
+  display: none;
+}
+
+.application-textarea{
+  margin-bottom: 25px;
+  &__elem{
+    border: 2px solid #5bd6d2;
+    border-radius: 50px;
+    padding: 370px 35px 15px;
+    height: 433px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    outline: none;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: normal;
+    letter-spacing: 0.06em;
+    text-transform: lowercase;
+    color: #000;
+    @include tablet(){
+      border-radius: 5px;
+      height: 300px;
+      font-size: 12px;
+      padding: 260px 20px 0;
+    }
+  }
+}
+
+.login-form{
+  max-width: 980px;
+  padding: 0;
+  width: 100%;
+  .modal__close{
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    background-color: transparent;
+    outline: none;
+    border: none;
+  }
+}
+.form{
+  transition: .4s;
+  width: 100%;
+  flex-shrink: 0;
+  &__row{
+    display: flex;
+
+  }
+  &.js-hidden{
+    display: none;
+  }
+  &__content{
+    width: 50%;
+    padding: 50px 30px;
+    min-height: 687px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  &__side{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    cursor: pointer;
+  }
+  &__image-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    width: 344px;
+    height: 344px;
+    background-color: #fff;
+  }
+  &__title{
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 104%;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #1c2120;
+    margin-bottom: 35px;
+  }
+  .application-input, .application__item{
+    width: 100%;
+  }
+  .application__item + .application__item{
+    margin-top: 25px;
+  }
+  &__button{
+    width: 100%;
+    margin-top: 35px;
+  }
+  &__switch{
+    text-align: center;
+    font-weight: 500;
+    font-size: 16px;
+    text-transform: lowercase;
+    color: #ea79ed;
+    margin-top: 10px;
+    cursor: pointer;
+    span{
+      color: #5bd6d2;
+    }
+  }
+}
+
+.forms{
+  display: flex;
+  overflow: hidden;
+  &.js-active{
+    .form--register{
+      transform: translateX(-100%);
+    }
+    .form--login{
+      transform: translateX(-100%);
+    }
+  }
 }
