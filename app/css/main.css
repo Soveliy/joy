@@ -438,7 +438,7 @@ a {
 }
 @media (any-hover: hover) {
   .button--gradient:hover {
-    opacity: 0.8;
+    background-color: rgba(234, 121, 237, 0.6);
   }
 }
 @media (max-width: 1600px) {
@@ -496,7 +496,7 @@ a {
 }
 @media (any-hover: hover) {
   .button--gradient-green:hover {
-    opacity: 0.8;
+    background-color: rgba(91, 214, 210, 0.6);
   }
 }
 @media (max-width: 1600px) {
@@ -549,12 +549,20 @@ a {
   line-height: 255%;
   text-transform: uppercase;
   color: #ea79ed;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 @media (max-width: 1024px) {
   .button--default {
     border-radius: 5px;
     font-size: 12px;
     line-height: 130%;
+  }
+}
+@media (any-hover: hover) {
+  .button--default:hover {
+    background-color: #ea79ed;
+    color: #fff;
   }
 }
 
@@ -1028,6 +1036,16 @@ a {
   font-size: 38px;
   line-height: 132%;
   color: #1c2120;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+@media (any-hover: hover) {
+  .section-footer__link:hover {
+    color: #EA79ED;
+  }
+  .section-footer__link:hover .section-footer__icon {
+    stroke: #EA79ED;
+  }
 }
 @media (max-width: 1600px) {
   .section-footer__link {
@@ -1049,6 +1067,8 @@ a {
   stroke-width: 7px;
   fill: none;
   stroke-linecap: round;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 @media (max-width: 1600px) {
   .section-footer__icon {
@@ -1467,6 +1487,13 @@ a {
   border: none;
   padding: 0 30px;
   cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+@media (any-hover: hover) {
+  .search__button:hover {
+    opacity: 0.8;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -1737,6 +1764,13 @@ a {
   cursor: pointer;
   -ms-flex-negative: 0;
   flex-shrink: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+@media (any-hover: hover) {
+  .catalog-item__button:hover {
+    opacity: 0.8;
+  }
 }
 @media (max-width: 1600px) {
   .catalog-item__button {
@@ -2182,6 +2216,13 @@ a {
   text-transform: uppercase;
   color: #ea79ed;
   cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+@media (any-hover: hover) {
+  .where-item__button:hover {
+    opacity: 0.8;
+  }
 }
 @media (max-width: 1600px) {
   .where-item__button {
@@ -2382,6 +2423,13 @@ a {
   border-radius: 75px;
   padding: 50px 50px 20px 50px;
 }
+@media (any-hover: hover) {
+  .blog-item:hover svg {
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+}
 @media (max-width: 768px) {
   .blog-item {
     border-radius: 20px;
@@ -2523,6 +2571,8 @@ a {
   stroke-width: 7px;
   stroke-linecap: round;
   stroke: #fff;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 @media (max-width: 1600px) {
   .blog-item__title svg {
@@ -2790,6 +2840,11 @@ a {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.social__link:hover {
+  background-color: #fff;
 }
 @media (max-width: 1024px) {
   .social__link {
@@ -2946,6 +3001,13 @@ a {
   font-size: 24px;
   line-height: 167%;
   color: #787878;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+@media (any-hover: hover) {
+  .footer__link:hover {
+    color: #fff;
+  }
 }
 @media (max-width: 1600px) {
   .footer__link {

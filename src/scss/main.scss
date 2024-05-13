@@ -311,6 +311,13 @@
     font-size: 38px;
     line-height: 132%;
     color: #1c2120;
+    transition: .3s;
+    @include hover(){
+      color: #EA79ED;
+      .section-footer__icon{
+        stroke: #EA79ED;
+      }
+    }
     @include big-desktop(){
       font-size: 20px;
     }
@@ -328,6 +335,7 @@
     stroke-width: 7px;
     fill: none;
     stroke-linecap: round;
+    transition: .3s;
     @include big-desktop(){
       stroke-width: 5px;
       height: 16px;
@@ -660,6 +668,10 @@
     border: none;
     padding: 0 30px;
     cursor: pointer;
+    transition: .3s;
+    @include hover(){
+      opacity: .8;
+    }
   }
 }
 .catalog{
@@ -860,6 +872,10 @@
       border: none;
       cursor: pointer;
       flex-shrink: 0;
+      transition: .3s;
+      @include hover(){
+        opacity: .8;
+      }
       @include big-desktop(){
         width: 80px;
       }
@@ -1238,6 +1254,10 @@
       text-transform: uppercase;
       color: #ea79ed;
       cursor: pointer;
+      transition: .3s;
+      @include hover(){
+        opacity: .8;
+      }
       @include big-desktop(){
         font-size: 18px;
       }
@@ -1385,6 +1405,11 @@
     box-shadow: 0 11px 25px 0 rgba(0, 0, 0, 0.1), 0 45px 45px 0 rgba(0, 0, 0, 0.09), 0 102px 61px 0 rgba(0, 0, 0, 0.05), 0 181px 72px 0 rgba(0, 0, 0, 0.01), 0 282px 79px 0 rgba(0, 0, 0, 0);
     border-radius: 75px;
     padding: 50px 50px 20px 50px;
+    @include hover(){
+      svg{
+        transform: translateX(20px);
+      }
+    }
     @include small-tablet(){
       border-radius: 20px;
       padding: 25px;
@@ -1484,6 +1509,7 @@
         stroke-width: 7px;
         stroke-linecap: round;
         stroke: #fff;
+        transition: .3s;
         @include big-desktop(){
           width: 15px;
           height: 35px;
@@ -1683,6 +1709,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: .3s;
+    &:hover{
+      background-color: #fff;
+    }
     @include tablet(){
       height: 40px;
       width: 40px;
@@ -1795,6 +1825,10 @@
     font-size: 24px;
     line-height: 167%;
     color: #787878;
+    transition: .3s;
+    @include hover(){
+      color: #fff;
+    }
     @include big-desktop(){
       font-size: 18px;
     }

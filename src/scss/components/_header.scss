@@ -223,7 +223,7 @@
       color: #fff;
       transition: .3s;
       @include hover(){
-        opacity: .8;
+        background-color: rgba(#EA79ED, .6);
       }
       @include big-desktop(){
         font-size: 18px;
@@ -269,7 +269,7 @@
     color: #fff;
     transition: .3s;
     @include hover(){
-      opacity: .8;
+      background-color: rgba(#5bd6d2,.6);
     }
     @include big-desktop(){
       font-size: 18px;
@@ -312,11 +312,16 @@
     line-height: 255%;
     text-transform: uppercase;
     color: #ea79ed;
+    transition: .3s;
     // background-color: #fff;
     @include tablet(){
       border-radius: 5px;
       font-size: 12px;
       line-height: 130%;
+    }
+    @include hover(){
+      background-color: #ea79ed;
+      color: #fff;
     }
   }
 
