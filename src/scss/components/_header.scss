@@ -314,6 +314,9 @@
     color: #ea79ed;
     transition: .3s;
     // background-color: #fff;
+    @include big-desktop(){
+      font-size: 18px;
+    }
     @include tablet(){
       border-radius: 5px;
       font-size: 12px;

@@ -552,6 +552,11 @@ a {
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
+@media (max-width: 1600px) {
+  .button--default {
+    font-size: 18px;
+  }
+}
 @media (max-width: 1024px) {
   .button--default {
     border-radius: 5px;
@@ -4168,4 +4173,15 @@ select {
 .basket-clear__button--true {
   border-radius: 0 0 15px 0;
   background-color: #ea79ed;
+}
+
+@media (max-width: 1200px) and (min-width: 1024px) {
+  .header .button {
+    font-size: 16px;
+    line-height: normal;
+    padding: 5px 10px;
+  }
+  .header .main-menu__link {
+    font-size: 16px;
+  }
 }/*# sourceMappingURL=main.css.map */
