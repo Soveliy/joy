@@ -302,6 +302,8 @@
     }
   }
   &--default{
+    // position: relative;
+    // z-index: 20;
     border: 3px solid #ea79ed;
     border-radius: 20px;
     padding: 8px 25px;
@@ -310,6 +312,7 @@
     line-height: 255%;
     text-transform: uppercase;
     color: #ea79ed;
+    // background-color: #fff;
     @include tablet(){
       border-radius: 5px;
       font-size: 12px;

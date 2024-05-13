@@ -688,6 +688,21 @@
     border-radius: 20px;
 
   }
+  &__remove{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    z-index: 50;
+    cursor: pointer;
+    transition: .3s;
+    @include hover(){
+      opacity: .8;
+    }
+    @include tablet(){
+      right: 10px;
+      top: 10px;
+    }
+  }
   .catalog-item__icon-in-cart{
     display: none;
   }
@@ -1602,6 +1617,9 @@
       @include tablet(){
         margin-top: 10px;
       }
+      @include for-360(){
+        flex-direction: column;
+      }
     }
     &__button{
       @include tablet(){
@@ -2501,7 +2519,11 @@ select{
 .login-form{
   max-width: 980px;
   padding: 0;
-  width: 100%;
+  width: 96%;
+  border-radius: 60px;
+  @include tablet(){
+    border-radius: 15px;
+  }
   .modal__close{
     position: absolute;
     top: 50px;
@@ -2509,6 +2531,11 @@ select{
     background-color: transparent;
     outline: none;
     border: none;
+    z-index: 500;
+    @include tablet(){
+      right: 20px;
+      top: 20px;
+    }
   }
 }
 .form{
@@ -2530,6 +2557,10 @@ select{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    @include tablet(){
+      width: 100%;
+      min-height: 500px;
+    }
   }
   &__side{
     display: flex;
@@ -2537,6 +2568,9 @@ select{
     justify-content: center;
     width: 50%;
     cursor: pointer;
+    @include tablet(){
+      display: none;
+    }
   }
   &__image-container{
     display: flex;
@@ -2555,6 +2589,10 @@ select{
     text-transform: uppercase;
     color: #1c2120;
     margin-bottom: 35px;
+    @include tablet(){
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
   }
   .application-input, .application__item{
     width: 100%;
@@ -2589,6 +2627,62 @@ select{
     }
     .form--login{
       transform: translateX(-100%);
+    }
+  }
+}
+.catalog-section{
+
+  &__basket-buttons{
+    display: flex;
+    justify-content: flex-end;
+    gap: 35px;
+    margin: 75px 0;
+    @include tablet(){
+      justify-content: center;
+      gap: 10px;
+      margin: 25px 0;
+    }
+  }
+
+}
+.basket-clear{
+  position: relative;
+  &__row{
+    display: flex;
+
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    pointer-events: none;
+    transition: .3s;
+    &.js-active{
+      pointer-events: all;
+      opacity: 1;
+      top: 100%;
+    }
+
+  }
+  &__button{
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    outline: none;
+    background-color: transparent;
+    border: none;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &--false{
+      border-radius: 0 0 0 15px;
+      border: 2px solid #ea79ed;
+      border-top: none;
+    }
+    &--true{
+      border-radius: 0 0 15px 0;
+      background-color: #ea79ed;
     }
   }
 }

@@ -4,9 +4,10 @@ import { Navigation, Pagination } from 'swiper/modules';
 import { burger } from './functions/burger.js';
 import NiceSelect from "nice-select2";
 import MicroModal from 'micromodal';
+import fslightbox from 'fslightbox';
 
 Swiper.use([Navigation, Pagination]);
-MicroModal.init();
+MicroModal.init({disableScroll:true});
 window.addEventListener('load', () => {
 
 
@@ -48,14 +49,17 @@ window.addEventListener('load', () => {
   new NiceSelect(document.getElementById("name"), {placeholder: 'Select title'});
   new NiceSelect(document.getElementById("genger"), {placeholder: 'Select gender'});
 
-  const loginBtns = document.querySelectorAll('.form__side,.form__switch')
-  if (loginBtns.length > 0){
-    loginBtns.forEach(loginBtn =>{
-      loginBtn.addEventListener('click', () => {
-        loginBtn.closest('.forms').classList.toggle('js-active')
+  const formFunc = () => {
+    const loginBtns = document.querySelectorAll('.form__side,.form__switch')
+    if (loginBtns.length > 0){
+      loginBtns.forEach(loginBtn =>{
+        loginBtn.addEventListener('click', () => {
+          loginBtn.closest('.forms').classList.toggle('js-active')
+        })
       })
-    })
+    }
   }
+  formFunc();
   const swiperBanner = new Swiper(".banner__swiper--js", {
     pagination: {
       el: ".banner__swiper--js .swiper-pagination",
@@ -150,4 +154,13 @@ if (faqItems.length > 0){
 
 }
 
+
+// clear catalog
+// const clearCatalogBtn = document.querySelector('[data-clear]')
+// if (clearCatalogBtn){
+//     const btnsContainer = document.querySelector('.basket-clear__row')
+//     clearCatalogBtn.addEventListener('click', () => {
+//       btnsContainer.classList.toggle('js-active')
+//     })
+// }
 })
