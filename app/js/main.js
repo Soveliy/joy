@@ -11206,6 +11206,13 @@ micromodal__WEBPACK_IMPORTED_MODULE_5__["default"].init({
   disableScroll: true
 });
 window.addEventListener('load', () => {
+  const priceFilter = document.querySelector('.price-filter__title');
+  if (priceFilter) {
+    priceFilter.addEventListener('click', () => {
+      const filterBody = priceFilter.closest('.price-filter');
+      filterBody.classList.toggle('js-active');
+    });
+  }
   const cardUrpade = () => {
     const cards = document.querySelectorAll('.catalog-item');
     if (cards.length > 0) {
@@ -11217,8 +11224,17 @@ window.addEventListener('load', () => {
       });
     }
   };
+  const modalCloses = document.querySelectorAll('.modal__close');
+  if (modalCloses.length > 0) {
+    modalCloses.forEach(modalClose => {
+      modalClose.addEventListener('click', () => {
+        micromodal__WEBPACK_IMPORTED_MODULE_5__["default"].close(`${modalClose.dataset.micromodalClose}`);
+      });
+    });
+  }
   cardUrpade();
   const formPages = document.querySelectorAll('[data-page]');
+  console.log(formPages);
   const stepButton = document.querySelector("[data-step-to-button='2']");
   const page1Fields = document.querySelectorAll("[data-page='1'] .application-input__elem--req");
   const page1 = document.querySelector("[data-page='1']");
@@ -11244,6 +11260,14 @@ window.addEventListener('load', () => {
   });
   new nice_select2__WEBPACK_IMPORTED_MODULE_4__["default"](document.getElementById("genger"), {
     placeholder: 'Select gender'
+  });
+  const tag = document.getElementById('tag');
+  const category = document.getElementById('category');
+  new nice_select2__WEBPACK_IMPORTED_MODULE_4__["default"](document.getElementById("tag"), {
+    placeholder: 'tag'
+  });
+  new nice_select2__WEBPACK_IMPORTED_MODULE_4__["default"](document.getElementById("category"), {
+    placeholder: 'category'
   });
   const formFunc = () => {
     const loginBtns = document.querySelectorAll('.form__side,.form__switch');
@@ -11272,6 +11296,31 @@ window.addEventListener('load', () => {
       },
       pagination: {
         el: ".where__swiper--js .swiper-pagination"
+      }
+    });
+  }
+  const swiperCatalog = document.querySelector('.catalog__swiper');
+  if (swiperCatalog) {
+    const swiperContactsSlider = new swiper__WEBPACK_IMPORTED_MODULE_1__["default"](swiperCatalog, {
+      spaceBetween: 25,
+      navigation: {
+        nextEl: ".catalog__swiper .swiper-button-next",
+        prevEl: ".catalog__swiper .swiper-button-prev"
+      },
+      pagination: {
+        el: ".catalog__swiper .swiper-pagination"
+      },
+      breakpoints: {
+        // when window width is >= 320px
+        320: {
+          slidesPerView: 2,
+          spaceBetween: 20
+        },
+        // when window width is >= 640px
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 25
+        }
       }
     });
   }

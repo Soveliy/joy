@@ -103,14 +103,21 @@
               </div>
               <div class="catalog-item__footer">
                 <div class="catalog-item__name">Tropicana Poison</div>
-                <button class="catalog-item__button">
-                  <svg class="catalog-item__icon-cart">
-                    <use xlink:href="img/sprite.svg#cart"></use>
-                  </svg>
-                  <svg class="catalog-item__icon-in-cart">
-                    <use xlink:href="img/sprite.svg#gal"></use>
-                  </svg>
-                </button>
+                <div class="catalog-item__counter counter">
+                  <div class="counter__row">
+                    <button class="counter__item" type="button">
+                      <svg class="">
+                        <use xlink:href="img/sprite.svg#minus"></use>
+                      </svg>
+                    </button>
+                    <input type="text" class="counter__input">
+                    <button class="counter__item" type="button">
+                      <svg class="">
+                        <use xlink:href="img/sprite.svg#plus"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="catalog-item in-cart">
@@ -306,11 +313,11 @@
 <div class="modal micromodal-slide" id="callback" aria-hidden="true">
     <div class="modal__overlay" tabindex="-1" data-micromodal-close>
         <div class="application modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
-      <button class="modal__close" aria-label="Close modal" data-micromodal-close>
+      <div class="modal__close"  data-micromodal-close="callback">
         <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M1.17296 1.17296C-0.390987 2.73691 -0.390987 5.27251 1.17296 6.83646L6.8365 12.5L1.17301 18.1635C-0.390938 19.7274 -0.390938 22.2631 1.17301 23.827C2.73691 25.3909 5.27256 25.3909 6.8365 23.827L12.5 18.1635L18.1635 23.827C19.7274 25.3909 22.2631 25.3909 23.827 23.827C25.3909 22.2631 25.3909 19.7274 23.827 18.1635L18.1635 12.5L23.827 6.83651C25.391 5.27256 25.391 2.73691 23.827 1.17296C22.2631 -0.390987 19.7275 -0.390987 18.1635 1.17296L12.5 6.83646L6.8365 1.17296C5.27256 -0.390987 2.73691 -0.390987 1.17296 1.17296Z" fill="#EA79ED" />
         </svg>
-      </button>
+      </div>
 
       <form action="#" class="application__form">
         <div class="application__page js-active" data-page="1">
@@ -973,11 +980,11 @@
 <div class="modal micromodal-slide" id="sign" aria-hidden="true">
   <div class="modal__overlay">
     <div class="application modal__container" role="dialog">
-      <button class="modal__close" aria-label="Close modal" data-micromodal-close>
+      <div class="modal__close" data-micromodal-close="sign">
         <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M1.17296 1.17296C-0.390987 2.73691 -0.390987 5.27251 1.17296 6.83646L6.8365 12.5L1.17301 18.1635C-0.390938 19.7274 -0.390938 22.2631 1.17301 23.827C2.73691 25.3909 5.27256 25.3909 6.8365 23.827L12.5 18.1635L18.1635 23.827C19.7274 25.3909 22.2631 25.3909 23.827 23.827C25.3909 22.2631 25.3909 19.7274 23.827 18.1635L18.1635 12.5L23.827 6.83651C25.391 5.27256 25.391 2.73691 23.827 1.17296C22.2631 -0.390987 19.7275 -0.390987 18.1635 1.17296L12.5 6.83646L6.8365 1.17296C5.27256 -0.390987 2.73691 -0.390987 1.17296 1.17296Z" fill="#EA79ED" />
         </svg>
-      </button>
+      </div>
       <div class="application__title">
         Sign here
       </div>
@@ -1010,11 +1017,11 @@
 <div class="modal micromodal-slide" id="login" aria-hidden="true">
   <div class="modal__overlay">
     <div class="login-form modal__container" role="dialog" aria-modal="true">
-      <button class="modal__close" aria-label="Close modal" data-micromodal-close>
+      <div class="modal__close"  data-micromodal-close="login">
         <svg width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M1.82982 1.82982C-0.60994 4.26959 -0.60994 8.22512 1.82982 10.6649L10.6649 19.5L1.8299 28.3351C-0.609864 30.7749 -0.609864 34.7305 1.8299 37.1702C4.26958 39.6099 8.22519 39.6099 10.6649 37.1702L19.5001 28.3352L28.3351 37.1702C30.7748 39.6099 34.7304 39.6099 37.1702 37.1702C39.6099 34.7305 39.6099 30.7749 37.1702 28.3351L28.3351 19.5L37.1702 10.665C39.6099 8.2252 39.6099 4.26959 37.1702 1.82982C34.7304 -0.609941 30.7749 -0.609941 28.3351 1.82982L19.5001 10.6649L10.6649 1.82982C8.22519 -0.609941 4.26958 -0.609941 1.82982 1.82982Z" fill="#5BD6D2" />
         </svg>
-      </button>
+      </div>
 
         <div class="forms">
           <form action="#" class="form form--register">

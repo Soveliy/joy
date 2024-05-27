@@ -218,9 +218,9 @@
                 </div>
                 <div class="about__gallery">
                   <div class="gallery__row">
-                    <div class="gallery__item-container"><a href="img/gal/1.jpg" data-fslightbox="gal" class="gallery-item"><img src="img/gal/1.jpg" alt=""></a></div>
-                    <div class="gallery__item-container"><a href="img/gal/2.jpg" data-fslightbox="gal" class="gallery-item"><img src="img/gal/2.jpg" alt=""></a></div>
-                    <div class="gallery__item-container gallery__item-container--w100"><a href="img/gal/3.jpg" data-fslightbox="gal" class="gallery-item"><img src="img/gal/3.jpg" alt=""></a></div>
+                    <div class="gallery__item-container"><a href="img/gal/1full.jpg" data-fslightbox="gal" class="gallery-item"><img src="img/gal/1.jpg" alt=""></a></div>
+                    <div class="gallery__item-container"><a href="img/gal/2full.jpg" data-fslightbox="gal" class="gallery-item"><img src="img/gal/2.jpg" alt=""></a></div>
+                    <div class="gallery__item-container gallery__item-container--w100"><a href="img/gal/3full.jpg" data-fslightbox="gal" class="gallery-item"><img src="img/gal/3.jpg" alt=""></a></div>
                   </div>
                 </div>
             </div>
@@ -238,7 +238,7 @@
               CANNABIS
             </h2>
            </div>
-           <div class="search section-head__search">
+           <!-- <div class="search section-head__search">
             <form class="search__form">
 
               <input type="text" class="search__input">
@@ -249,108 +249,213 @@
               </label>
               <button class="search__button button">search</button>
             </form>
+           </div> -->
+           <div class="filters">
+            <div class="filters__row">
+              <div class="price-filter filters__select filters__select--defalut">
+                <div class="price-filter__title">
+                  price
+                </div>
+                <div class="price-filter__body">
+                  <div class="price-filter__item">
+                    <div class="price-filter__item-title">
+                      from
+                    </div>
+                    <input type="text" class="price-filter__input" placeholder="$0..">
+                  </div>
+                  <div class="price-filter__item">
+                    <div class="price-filter__item-title">
+                      to
+                    </div>
+                    <input type="text" class="price-filter__input" placeholder="$1000..">
+                  </div>
+                </div>
+              </div>
+              <select name="tag" class="filters__select filters__select--yellow" id="tag">
+                <option value="hybrid">hybrid</option>
+                <option value="THC 24%">THC 24%</option>
+                <option value="CBG 1%">CBG 1%</option>
+              </select>
+              <select name="category" class="filters__select filters__select--purple" id="category">
+                <option value="category 1">category 1</option>
+                <option value="category 2">category 2</option>
+                <option value="category 3">category 3</option>
+              </select>
+
+            </div>
            </div>
           </div>
-          <div class="catalog__grid">
-            <div class="catalog-item">
-              <div class="catalog-item__price">
-                <div class="catalog-item__price-value">$15</div>
-                <div class="catalog-item__price-label">per gramm</div>
-              </div>
-              <div class="catalog-item__body">
-                <div class="catalog-item__image">
-                  <picture>
-                    <source srcset="img/catalog-item.webp" type="image/webp">
-                    <img loading="lazy" src="img/catalog-item.png" class="image" alt="">
-                  </picture>
+          <div class="catalog__swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="catalog-item">
+                  <div class="catalog-item__price">
+                    <div class="catalog-item__price-value">$15</div>
+                    <div class="catalog-item__price-label">per gramm</div>
+                  </div>
+                  <div class="catalog-item__body">
+                    <div class="catalog-item__image">
+                      <picture>
+                        <source srcset="img/catalog-item.webp" type="image/webp">
+                        <img loading="lazy" src="img/catalog-item.png" class="image" alt="">
+                      </picture>
+                    </div>
+                    <ul class="catalog-item__list">
+                      <li class="catalog-item__option">hybrid</li>
+                      <li class="catalog-item__option">THC <b>24%</b></li>
+                      <li class="catalog-item__option">CBG <b>1%</b></li>
+                    </ul>
+                  </div>
+                  <div class="catalog-item__footer">
+                    <div class="catalog-item__name">Tropicana Poison</div>
+                    <button class="catalog-item__button">
+                      <svg class="catalog-item__icon-cart">
+                        <use xlink:href="img/sprite.svg#cart"></use>
+                      </svg>
+                      <svg class="catalog-item__icon-in-cart">
+                        <use xlink:href="img/sprite.svg#gal"></use>
+                      </svg>
+                    </button>
+                  </div>
                 </div>
-                <ul class="catalog-item__list">
-                  <li class="catalog-item__option">hybrid</li>
-                  <li class="catalog-item__option">THC <b>24%</b></li>
-                  <li class="catalog-item__option">CBG <b>1%</b></li>
-                </ul>
               </div>
-              <div class="catalog-item__footer">
-                <div class="catalog-item__name">Tropicana Poison</div>
-                <button class="catalog-item__button">
-                  <svg class="catalog-item__icon-cart">
-                    <use xlink:href="img/sprite.svg#cart"></use>
-                  </svg>
-                  <svg class="catalog-item__icon-in-cart">
-                    <use xlink:href="img/sprite.svg#gal"></use>
-                  </svg>
-                </button>
+              <div class="swiper-slide">
+                <div class="catalog-item">
+                  <div class="catalog-item__price">
+                    <div class="catalog-item__price-value">$15</div>
+                    <div class="catalog-item__price-label">per gramm</div>
+                  </div>
+                  <div class="catalog-item__body">
+                    <div class="catalog-item__image">
+                      <picture>
+                        <source srcset="img/catalog-item.webp" type="image/webp">
+                        <img loading="lazy" src="img/catalog-item.png" class="image" alt="">
+                      </picture>
+                    </div>
+                    <ul class="catalog-item__list">
+                      <li class="catalog-item__option">hybrid</li>
+                      <li class="catalog-item__option">THC <b>24%</b></li>
+                      <li class="catalog-item__option">CBG <b>1%</b></li>
+                    </ul>
+                  </div>
+                  <div class="catalog-item__footer">
+                    <div class="catalog-item__name">Tropicana Poison</div>
+                    <button class="catalog-item__button">
+                      <svg class="catalog-item__icon-cart">
+                        <use xlink:href="img/sprite.svg#cart"></use>
+                      </svg>
+                      <svg class="catalog-item__icon-in-cart">
+                        <use xlink:href="img/sprite.svg#gal"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="catalog-item">
+                  <div class="catalog-item__price">
+                    <div class="catalog-item__price-value">$15</div>
+                    <div class="catalog-item__price-label">per gramm</div>
+                  </div>
+                  <div class="catalog-item__body">
+                    <div class="catalog-item__image">
+                      <picture>
+                        <source srcset="img/catalog-item.webp" type="image/webp">
+                        <img loading="lazy" src="img/catalog-item.png" class="image" alt="">
+                      </picture>
+                    </div>
+                    <ul class="catalog-item__list">
+                      <li class="catalog-item__option">hybrid</li>
+                      <li class="catalog-item__option">THC <b>24%</b></li>
+                      <li class="catalog-item__option">CBG <b>1%</b></li>
+                    </ul>
+                  </div>
+                  <div class="catalog-item__footer">
+                    <div class="catalog-item__name">Tropicana Poison</div>
+                    <button class="catalog-item__button">
+                      <svg class="catalog-item__icon-cart">
+                        <use xlink:href="img/sprite.svg#cart"></use>
+                      </svg>
+                      <svg class="catalog-item__icon-in-cart">
+                        <use xlink:href="img/sprite.svg#gal"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="catalog-item">
+                  <div class="catalog-item__price">
+                    <div class="catalog-item__price-value">$15</div>
+                    <div class="catalog-item__price-label">per gramm</div>
+                  </div>
+                  <div class="catalog-item__body">
+                    <div class="catalog-item__image">
+                      <picture>
+                        <source srcset="img/catalog-item.webp" type="image/webp">
+                        <img loading="lazy" src="img/catalog-item.png" class="image" alt="">
+                      </picture>
+                    </div>
+                    <ul class="catalog-item__list">
+                      <li class="catalog-item__option">hybrid</li>
+                      <li class="catalog-item__option">THC <b>24%</b></li>
+                      <li class="catalog-item__option">CBG <b>1%</b></li>
+                    </ul>
+                  </div>
+                  <div class="catalog-item__footer">
+                    <div class="catalog-item__name">Tropicana Poison</div>
+                    <button class="catalog-item__button">
+                      <svg class="catalog-item__icon-cart">
+                        <use xlink:href="img/sprite.svg#cart"></use>
+                      </svg>
+                      <svg class="catalog-item__icon-in-cart">
+                        <use xlink:href="img/sprite.svg#gal"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="catalog-item">
+                  <div class="catalog-item__price">
+                    <div class="catalog-item__price-value">$15</div>
+                    <div class="catalog-item__price-label">per gramm</div>
+                  </div>
+                  <div class="catalog-item__body">
+                    <div class="catalog-item__image">
+                      <picture>
+                        <source srcset="img/catalog-item.webp" type="image/webp">
+                        <img loading="lazy" src="img/catalog-item.png" class="image" alt="">
+                      </picture>
+                    </div>
+                    <ul class="catalog-item__list">
+                      <li class="catalog-item__option">hybrid</li>
+                      <li class="catalog-item__option">THC <b>24%</b></li>
+                      <li class="catalog-item__option">CBG <b>1%</b></li>
+                    </ul>
+                  </div>
+                  <div class="catalog-item__footer">
+                    <div class="catalog-item__name">Tropicana Poison</div>
+                    <button class="catalog-item__button">
+                      <svg class="catalog-item__icon-cart">
+                        <use xlink:href="img/sprite.svg#cart"></use>
+                      </svg>
+                      <svg class="catalog-item__icon-in-cart">
+                        <use xlink:href="img/sprite.svg#gal"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="catalog-item">
-              <div class="catalog-item__price">
-                <div class="catalog-item__price-value">$15</div>
-                <div class="catalog-item__price-label">per gramm</div>
-              </div>
-              <div class="catalog-item__body">
-                <div class="catalog-item__image">
-                  <picture>
-                    <source srcset="img/catalog-item.webp" type="image/webp">
-                    <img loading="lazy" src="img/catalog-item.png" class="image" alt="">
-                  </picture>
-                </div>
-                <ul class="catalog-item__list">
-                  <li class="catalog-item__option">hybrid</li>
-                  <li class="catalog-item__option">THC <b>24%</b></li>
-                  <li class="catalog-item__option">CBG <b>1%</b></li>
-                </ul>
-              </div>
-              <div class="catalog-item__footer">
-                <div class="catalog-item__name">Tropicana Poison</div>
-                <button class="catalog-item__button">
-                  <svg class="catalog-item__icon-cart">
-                    <use xlink:href="img/sprite.svg#cart"></use>
-                  </svg>
-                  <svg class="catalog-item__icon-in-cart">
-                    <use xlink:href="img/sprite.svg#gal"></use>
-                  </svg>
-                </button>
-              </div>
+            <div class="catalog-navigation section-footer catalog__section-footer">
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-pagination"></div>
+              <div class="swiper-button-next"></div>
             </div>
-            <div class="catalog-item">
-              <div class="catalog-item__price">
-                <div class="catalog-item__price-value">$15</div>
-                <div class="catalog-item__price-label">per gramm</div>
-              </div>
-              <div class="catalog-item__body">
-                <div class="catalog-item__image">
-                  <picture>
-                    <source srcset="img/catalog-item.webp" type="image/webp">
-                    <img loading="lazy" src="img/catalog-item.png" class="image" alt="">
-                  </picture>
-                </div>
-                <ul class="catalog-item__list">
-                  <li class="catalog-item__option">hybrid</li>
-                  <li class="catalog-item__option">THC <b>24%</b></li>
-                  <li class="catalog-item__option">CBG <b>1%</b></li>
-                </ul>
-              </div>
-              <div class="catalog-item__footer">
-                <div class="catalog-item__name">Tropicana Poison</div>
-                <button class="catalog-item__button">
-                  <svg class="catalog-item__icon-cart">
-                    <use xlink:href="img/sprite.svg#cart"></use>
-                  </svg>
-                  <svg class="catalog-item__icon-in-cart">
-                    <use xlink:href="img/sprite.svg#gal"></use>
-                  </svg>
-                </button>
-              </div>
-            </div>
+
           </div>
-          <div class="section-footer catalog__section-footer">
-            <a href="#" class="section-footer__link">
-              SEE MORE
-              <svg class="section-footer__icon">
-                <use xlink:href="img/sprite.svg#bottomarrow"></use>
-              </svg>
-            </a>
-          </div>
+
         </div>
       </section>
       <div class="banner banner--margin-top">
@@ -1233,11 +1338,11 @@
 <div class="modal micromodal-slide" id="callback" aria-hidden="true">
     <div class="modal__overlay" tabindex="-1" data-micromodal-close>
         <div class="application modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
-      <button class="modal__close" aria-label="Close modal" data-micromodal-close>
+      <div class="modal__close"  data-micromodal-close="callback">
         <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M1.17296 1.17296C-0.390987 2.73691 -0.390987 5.27251 1.17296 6.83646L6.8365 12.5L1.17301 18.1635C-0.390938 19.7274 -0.390938 22.2631 1.17301 23.827C2.73691 25.3909 5.27256 25.3909 6.8365 23.827L12.5 18.1635L18.1635 23.827C19.7274 25.3909 22.2631 25.3909 23.827 23.827C25.3909 22.2631 25.3909 19.7274 23.827 18.1635L18.1635 12.5L23.827 6.83651C25.391 5.27256 25.391 2.73691 23.827 1.17296C22.2631 -0.390987 19.7275 -0.390987 18.1635 1.17296L12.5 6.83646L6.8365 1.17296C5.27256 -0.390987 2.73691 -0.390987 1.17296 1.17296Z" fill="#EA79ED" />
         </svg>
-      </button>
+      </div>
 
       <form action="#" class="application__form">
         <div class="application__page js-active" data-page="1">
@@ -1900,11 +2005,11 @@
 <div class="modal micromodal-slide" id="sign" aria-hidden="true">
   <div class="modal__overlay">
     <div class="application modal__container" role="dialog">
-      <button class="modal__close" aria-label="Close modal" data-micromodal-close>
+      <div class="modal__close" data-micromodal-close="sign">
         <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M1.17296 1.17296C-0.390987 2.73691 -0.390987 5.27251 1.17296 6.83646L6.8365 12.5L1.17301 18.1635C-0.390938 19.7274 -0.390938 22.2631 1.17301 23.827C2.73691 25.3909 5.27256 25.3909 6.8365 23.827L12.5 18.1635L18.1635 23.827C19.7274 25.3909 22.2631 25.3909 23.827 23.827C25.3909 22.2631 25.3909 19.7274 23.827 18.1635L18.1635 12.5L23.827 6.83651C25.391 5.27256 25.391 2.73691 23.827 1.17296C22.2631 -0.390987 19.7275 -0.390987 18.1635 1.17296L12.5 6.83646L6.8365 1.17296C5.27256 -0.390987 2.73691 -0.390987 1.17296 1.17296Z" fill="#EA79ED" />
         </svg>
-      </button>
+      </div>
       <div class="application__title">
         Sign here
       </div>
@@ -1937,11 +2042,11 @@
 <div class="modal micromodal-slide" id="login" aria-hidden="true">
   <div class="modal__overlay">
     <div class="login-form modal__container" role="dialog" aria-modal="true">
-      <button class="modal__close" aria-label="Close modal" data-micromodal-close>
+      <div class="modal__close"  data-micromodal-close="login">
         <svg width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M1.82982 1.82982C-0.60994 4.26959 -0.60994 8.22512 1.82982 10.6649L10.6649 19.5L1.8299 28.3351C-0.609864 30.7749 -0.609864 34.7305 1.8299 37.1702C4.26958 39.6099 8.22519 39.6099 10.6649 37.1702L19.5001 28.3352L28.3351 37.1702C30.7748 39.6099 34.7304 39.6099 37.1702 37.1702C39.6099 34.7305 39.6099 30.7749 37.1702 28.3351L28.3351 19.5L37.1702 10.665C39.6099 8.2252 39.6099 4.26959 37.1702 1.82982C34.7304 -0.609941 30.7749 -0.609941 28.3351 1.82982L19.5001 10.6649L10.6649 1.82982C8.22519 -0.609941 4.26958 -0.609941 1.82982 1.82982Z" fill="#5BD6D2" />
         </svg>
-      </button>
+      </div>
 
         <div class="forms">
           <form action="#" class="form form--register">
