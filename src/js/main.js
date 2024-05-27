@@ -8,8 +8,35 @@ import fslightbox from 'fslightbox';
 
 
 Swiper.use([Navigation, Pagination]);
-MicroModal.init({disableScroll:true});
+
 window.addEventListener('load', () => {
+  const body = document.querySelector('body')
+  MicroModal.init({disableScroll:true});
+  const ageModal = document.getElementById('age');
+  const yesButton = document.querySelector('.js-yes');
+  const noButton = document.querySelector('.js-no');
+
+  yesButton.addEventListener('click', () => {
+    localStorage.setItem('ageVerified', 'true');
+    ageModal.style.display = 'none';
+  });
+
+  noButton.addEventListener('click', () => {
+
+    // Redirect to another page or just close the window
+    window.location.href = 'https://www.google.com'; // example redirect
+  });
+
+  // Check if age was previously verified
+  setTimeout(() => {
+    if (localStorage.getItem('ageVerified') === 'true') {
+      ageModal.style.display = 'none';
+      body.classList.remove('js-hidden')
+    } else {
+      ageModal.style.display = 'block'
+      body.classList.add('js-hidden')
+    }
+  }, 300);
   const priceFilter = document.querySelector('.price-filter__title')
   if (priceFilter){
     priceFilter.addEventListener('click', () => {
@@ -22,9 +49,12 @@ window.addEventListener('load', () => {
     if (cards.length > 0) {
       cards.forEach(card => {
         const btn = card.querySelector('.catalog-item__button')
-        btn.addEventListener('click', () => {
-          btn.closest('.catalog-item').classList.toggle('in-cart')
-        })
+        if (btn){
+          btn.addEventListener('click', () => {
+            btn.closest('.catalog-item').classList.toggle('in-cart')
+          })
+        }
+
       })
     }
 
@@ -67,8 +97,13 @@ window.addEventListener('load', () => {
 
   const tag = document.getElementById('tag')
   const category = document.getElementById('category')
-  new NiceSelect(document.getElementById("tag"), {placeholder: 'tag'});
-  new NiceSelect(document.getElementById("category"), {placeholder: 'category'});
+  if (tag){
+    new NiceSelect(document.getElementById("tag"), {placeholder: 'tag'});
+  }
+  if (category) {
+    new NiceSelect(document.getElementById("category"), {placeholder: 'category'});
+
+  }
 
   const formFunc = () => {
     const loginBtns = document.querySelectorAll('.form__side,.form__switch')
@@ -114,6 +149,7 @@ window.addEventListener('load', () => {
       },
       pagination: {
         el: ".catalog__swiper .swiper-pagination",
+        clickable:true,
       },
       breakpoints: {
         // when window width is >= 320px
@@ -204,13 +240,47 @@ if (faqItems.length > 0){
 
 }
 
+const counters = document.querySelectorAll('.catalog-item__counter');
+  if (counters){
+    counters.forEach(counter => {
+      const input = counter.querySelector('.counter__input');
+      const btnMinus = counter.querySelector('.counter__item--minus');
+      const btnPlus = counter.querySelector('.counter__item--plus');
+
+      btnMinus.addEventListener('click', () => {
+        let currentValue = parseInt(input.value, 10);
+        if (isNaN(currentValue)) currentValue = 0;
+        input.value = Math.max(0, currentValue - 1); // Не позволяйте счетчику становиться отрицательным
+      });
+
+      btnPlus.addEventListener('click', () => {
+        let currentValue = parseInt(input.value, 10);
+        if (isNaN(currentValue)) currentValue = 0;
+        input.value = currentValue + 1;
+      });
+
+      input.addEventListener('input', () => {
+        let value = parseInt(input.value, 10);
+        if (isNaN(value) || value < 0) {
+          input.value = 0;
+        }
+      });
+
+    input.addEventListener('keydown', (event) => {
+      // Разрешаем только цифры, клавиши управления и стрелки
+      if (!event.key.match(/[0-9]/) && !['Backspace', 'ArrowLeft', 'ArrowRight', 'Delete', 'Tab'].includes(event.key)) {
+        event.preventDefault();
+      }
+    });
+    });
+  }
 
 // clear catalog
-// const clearCatalogBtn = document.querySelector('[data-clear]')
-// if (clearCatalogBtn){
-//     const btnsContainer = document.querySelector('.basket-clear__row')
-//     clearCatalogBtn.addEventListener('click', () => {
-//       btnsContainer.classList.toggle('js-active')
-//     })
-// }
+const clearCatalogBtn = document.querySelector('[data-clear]')
+if (clearCatalogBtn){
+    const btnsContainer = document.querySelector('.basket-clear__row')
+    clearCatalogBtn.addEventListener('click', () => {
+      btnsContainer.classList.toggle('js-active')
+    })
+}
 })
